@@ -1,0 +1,38 @@
+body
+{
+    background-color: #797676;   
+    color: white;
+}
+
+#index
+{
+    height: 50vh;
+    text-align: center;
+    margin-top: 20%;
+    font-size: 140%;
+}
+
+h1 {
+    font-family:  "Arial Black", Arial, Verdana, sans-serif, Impact;
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+}
+
+#titre
+{
+    text-align: center;
+}
+
+footer
+{
+    background-color: white;
+    padding: auto;
+    border-color: white;
+    border-top: 0.3em;
+    border-top-style: solid;
+}
+
