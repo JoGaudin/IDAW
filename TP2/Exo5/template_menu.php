@@ -7,7 +7,7 @@
         'Expérience' => array( 'Expériences Professionnelles' ),
         'Associatif' => array('Expériences Associatives'),
         'Hobbies' => array('Hobbies'),
-        'Infos-technique' => array('Infos technique')
+        'infos-technique' => array('Infos technique')
     );
 
     echo "<nav>";
@@ -16,13 +16,15 @@
     foreach($mymenu as $pageId => $pageParameters){
         echo "<li>";
         if($pageId == $currentPageId){
-            echo '<a id="currentpage" href="'.$pageId.'.php">'.$pageParameters;
+            echo '<a id="currentpage" href="'.$pageId.'.php">'.$pageParameters[0];
         }else{
-            echo '<a href="'.$pageId.'.php">'.$pageParameters;
+            echo '<a href="'.$pageId.'.php">'.$pageParameters[0];
         }
         echo "</a></li>";
     }
     
+    echo "</ul>";
+    echo "</nav>";
 
     }
 ?>
