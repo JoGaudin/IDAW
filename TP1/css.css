@@ -2,6 +2,7 @@ body
 {
     background-color: #797676;   
     color: white;
+    margin: 0;
 }
 
 #index
@@ -16,23 +17,74 @@ h1 {
     font-family:  "Arial Black", Arial, Verdana, sans-serif, Impact;
 }
 
+ul
+{
+    background-color: #C9C9C9;
+    text-align: center;
+}   
+
+li
+{
+    display: inline-block;
+    padding: 1em;
+}
+
+a:hover
+{
+    color:black;
+}
+
 a
 {
     text-decoration: none;
     color: white;
 }
 
+#currentpage
+{
+    background: #696969;
+}
+
+
 #titre
 {
     text-align: center;
 }
 
-footer
+#contenu
 {
-    background-color: white;
-    padding: auto;
-    border-color: white;
-    border-top: 0.3em;
-    border-top-style: solid;
+    margin: 15px;
+}
+
+.photoJo
+{
+    width: 200px;
+    height: 266px;
+    margin-right: 0px;
+    float: right;
+}
+
+.photograph
+{
+    width: 200px;
+    height: 266px;
+}
+
+.volley
+{
+    width: 376px;
+    height: 211px;
+}
+
+.avion
+{
+    width: 384px;
+    height: 288px;
+}
+
+#footer
+{
+    background-color: #C9C9C9;
+    
 }
 
