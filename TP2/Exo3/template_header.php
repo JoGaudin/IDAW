@@ -9,10 +9,3 @@
     </head>
 
     <body>
-        <section id="index">
-            <h1>Johan Gaudin</h1>
-            <a href="cv.html"><button class="btn" type="button">Accéder à mon CV</button></a>
-        </section>
-               
-    </body>
-</html>
