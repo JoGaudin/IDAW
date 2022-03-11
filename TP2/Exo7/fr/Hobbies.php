@@ -1,6 +1,8 @@
 
         <!-- Body -->
-        <div id="contenu">           
+        <div id="contenu">   
+            
+            <h3><u><a href="index.php?page=Hobbies&lang=en">Anglais</a></u></h3>
             
             <h2><em>Photographie</em></h2>
             <p>
@@ -19,6 +21,7 @@
                 J'ai beaucoup voyager durant mon adolescence notamment grâce à différentes colonies de vacances dans les capitales européennes (Rome, Madrid, Amsterdam, Prague) <br> mais aussi avec des voyages familiaux aux USA ou en Croatie.
             </p>
             <img class="avion" src="images/avion.jpg" alt="Image de tour"/>
+
 
         </div>
         

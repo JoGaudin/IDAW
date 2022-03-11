@@ -1,6 +1,8 @@
 
     <!-- Body -->
-    <div id="contenu">           
+    <div id="contenu"> 
+        
+        <h3><u><a href="index.php?page=accueil&lang=en">Anglais</a></u></h3>
 
         <h1>Présentation</h1>
             <p>
@@ -18,6 +20,8 @@
 
         <h1>Compétences</h1>
             <p>Organisé, Sérieux, Créatif, Capacité d'adaptation</p>
+
+        
     </div>
     
 

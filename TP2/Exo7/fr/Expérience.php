@@ -1,6 +1,9 @@
 
         <!-- Body -->
-        <div id="contenu">           
+        <div id="contenu">  
+            
+            <h3><u><a href="index.php?page=Expérience&lang=en">Anglais</a></u></h3>
+            
             <h2><u>Assistant ingénieur électronicien</u></h2>
             <p><strong>TE Connectivity,</strong> <em>Bâle, Suisse</em><br>
                 De mai 2021 à juillet 2021 <br>
@@ -19,7 +22,7 @@
                 Monteur d'ensembles électroniques dans le cadre de mon cursus d'école d'ingénieur
             </p>
             
-
+            
         </div>
 
 </html>

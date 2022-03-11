@@ -1,6 +1,9 @@
 
         <!-- Body -->
-        <div id="contenu">           
+        <div id="contenu">  
+            
+            <h3 id="langue"><u><a href="index.php?page=Expérience&lang=fr">French</a></u></h3>
+
             <h2><u>Assistant engineer</u></h2>
             <p><strong>TE Connectivity,</strong> <em>Basel, Switzerland</em><br>
                 From May 2021 to July 2021 <br>
@@ -19,7 +22,7 @@
                 Assembly and test of electronic systems intented for urban furnitures (Parisian kiosk, public toilet and digital screen). Resume as a summer job.
             </p>
             
-
+            
         </div>
 
 </html>

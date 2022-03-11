@@ -2,6 +2,8 @@
     <!-- Body -->
     <div id="contenu">           
 
+        <h3 id="langue"><u><a href="index.php?page=accueil&lang=fr">French</a></u></h3>
+
         <h1>Presentation</h1>
             <p>
             My name is Johan Gaudin, I am 21 years old. I was born on 30th November 2000 in Le Chesnay,
@@ -18,6 +20,8 @@
 
         <h1>Personality</h1>
             <p>Organized, Conscientious, Optimistic, Creative, Adaptation skill</p>
+
+        
     </div>
     
 

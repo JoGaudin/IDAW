@@ -1,14 +1,14 @@
 <?php
-    function renderMenuToHTML($currentPageId) {
+    function renderMenuToHTML($currentPageId, $langdef) {
     // un tableau qui definit la structure du site
     $mymenu = array(
         // idPage titre
-        'accueil' => array( 'Informations générales' ),
-        'Expérience' => array( 'Expériences Professionnelles' ),
-        'Associatif' => array('Expériences Associatives'),
+        'accueil' => array( 'General information' ),
+        'Expérience' => array( 'Professional Experience' ),
+        'Associatif' => array('Associative Experiences'),
         'Hobbies' => array('Hobbies'),
-        'infos-technique' => array('Infos technique'),
-        'contact' => array('Me Contacter')
+        'infos-technique' => array('Technical info'),
+        'contact' => array('Contact me')
     );
 
     foreach($mymenu as $pageId => $pageParameters){
@@ -25,7 +25,7 @@
         if($pageId == $currentPageId){
             echo  'id="currentpage"'; 
         }
-        echo 'href="cv.php?page='.$pageId.'">'.$pageParameters[0];
+        echo 'href="index.php?page='.$pageId.'&lang='.$langdef.'">'.$pageParameters[0];
         
         echo "</a></li>";
     }

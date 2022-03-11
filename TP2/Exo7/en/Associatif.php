@@ -1,6 +1,8 @@
 
         <!-- Body -->
-        <div id="contenu">           
+        <div id="contenu"> 
+            
+            <h3 id="langue"><u><a href="index.php?page=Associatif&lang=fr">French</a></u></h3>
             
             <h2><u>President</u></h2>
             <p><strong>Sépia(club photo),</strong> <em>IMT Nord Europe</em><br>

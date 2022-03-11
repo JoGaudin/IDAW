@@ -1,6 +1,8 @@
 
         <!-- Body -->
-        <div id="contenu">           
+        <div id="contenu">     
+            
+            <h3 id="langue"><u><a href="index.php?page=Hobbies&lang=fr">French</a></u></h3>
             
             <h2><em>Photography</em></h2>
             <p>
@@ -19,6 +21,7 @@
             I travelled a lot during my teenage years, notably thanks to different summer camps in European capitals (Rome, Madrid, Amsterdam, Prague) but also with family trips to the USA or Croatia.
             </p>
             <img class="avion" src="images/avion.jpg" alt="Image de tour"/>
+
 
         </div>
         

@@ -1,5 +1,5 @@
 <?php
-    function renderMenuToHTML($currentPageId) {
+    function renderMenuToHTML($currentPageId, $langdef) {
     // un tableau qui definit la structure du site
     $mymenu = array(
         // idPage titre
@@ -25,7 +25,7 @@
         if($pageId == $currentPageId){
             echo  'id="currentpage"'; 
         }
-        echo 'href="cv.php?page='.$pageId.'">'.$pageParameters[0];
+        echo 'href="index.php?page='.$pageId.'&lang='.$langdef.'">'.$pageParameters[0];
         
         echo "</a></li>";
     }
