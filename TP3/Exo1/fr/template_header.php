@@ -4,7 +4,7 @@
     <head>
         <title>Mon CV</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="css.css" />
+        <link rel="stylesheet" href="style1.css" />
         <link rel="icon" type="image/jpg" href="images/favicon.jpg"/>
     </head>
 

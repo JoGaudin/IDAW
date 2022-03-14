@@ -18,8 +18,10 @@
 </form>
 
 
+
 <form id="style_form" action="index.php" method="GET">
     <input name="page" type="hidden" value="login"> 
+    <input name="lang" type="hidden" value="fr">
     <select name="css">
         <option value="style1">style1</option>
         <option value="style2">style2</option>
@@ -29,5 +31,22 @@
 </form>
 
 <?php
-    setcookie("style_css", $_GET['css'], time()+3600);
+
+    $styledef = "style1";
+
+    echo '<link rel="stylesheet" href="'.$styledef.'.css" />';
+    if(isset($_GET['css'])){
+        $styledef = $_GET['css'];
+        echo '<link rel="stylesheet" href="'.$styledef.'.css" />';
+        echo $styledef."<br>";
+    }else{
+        setcookie("style_css", $styledef, time()+600);
+        echo $_COOKIE["style_css"];
+        echo '<link rel="stylesheet" href="'.$_COOKIE["style_css"].'.css" />';
+    }
+
+
+    
+
+    
 ?>
