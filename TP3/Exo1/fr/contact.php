@@ -1,6 +1,6 @@
         <!-- Body -->
         <div id="contact">  
-            
+        
             <h3><u><a href="index.php?page=contact&lang=en">Anglais</a></u></h3>
             
             <h1>Téléphone :</h1>

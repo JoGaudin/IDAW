@@ -8,6 +8,8 @@
         'Dragoun' => 'Johan'
         );
 
+    
+    
     $login = "anonymous";
     $errorText = "";
     $successfullyLogged = false;
@@ -28,6 +30,9 @@
         echo $errorText;
     } else {
         echo "<h1>Bienvenu ".$login."</h1><br>";
-        echo "ton mot de passe est :".$tryPwd;
+        echo "ton mot de passe est :".$tryPwd."<br>";
+        //La session est démarrée dans template_menu.php
+        $_SESSION['nom'] = $login;
+        echo "Session name : ".$_SESSION['nom'];
     }
 ?>

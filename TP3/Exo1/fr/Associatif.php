@@ -1,7 +1,8 @@
 
         <!-- Body -->
         <div id="contenu">   
-            
+        
+
             <h3><u><a href="index.php?page=Associatif&lang=en">Anglais</a></u></h3>
             
             <h2><u>Président</u></h2>

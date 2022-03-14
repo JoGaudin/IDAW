@@ -1,5 +1,5 @@
         <!-- Body -->
-        <div id="contenu">           
+        <div id="contenu">   
         
         <h3><u><a href="index.php?page=infos-technique&lang=en">Anglais</a></u></h3>
 

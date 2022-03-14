@@ -1,18 +1,38 @@
+
+
 <h3><u><a href="index.php?page=login&lang=en">Anglais</a></u></h3>
 
-<form id="login_form" action="fr/connected.php" method="POST">
+<?php
+    //La session est démarrée dans template_menu.php
+    if(isset($_SESSION['nom'])){
+        echo "<h1>Vous êtes déjà connectés</h1>";
+    }else{
+        echo '<form id="login_form" action="index.php?page=connected&lang=fr" method="POST">
+        <table>
+            <tr>
+                <th>Login :</th>
+                <td><input type="text" name="login"></td>
+            </tr>
+            <tr>
+                <th>Mot de passe :</th>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type="submit" value="Se connecter..." /></td>
+            </tr>
+        </table>
+    </form>';
+    }
+?>
+
+
+
+<form id="login_form" action="fr/logout.php" method="POST">
     <table>
         <tr>
-            <th>Login :</th>
-            <td><input type="text" name="login"></td>
-        </tr>
-        <tr>
-            <th>Mot de passe :</th>
-            <td><input type="password" name="password"></td>
-        </tr>
-        <tr>
             <th></th>
-            <td><input type="submit" value="Se connecter..." /></td>
+            <td><input type="submit" value="Se déconnecter"/></td>
         </tr>
     </table>
 </form>
@@ -38,10 +58,8 @@
     if(isset($_GET['css'])){
         $styledef = $_GET['css'];
         echo '<link rel="stylesheet" href="'.$styledef.'.css" />';
-        echo $styledef."<br>";
     }else{
         setcookie("style_css", $styledef, time()+600);
-        echo $_COOKIE["style_css"];
         echo '<link rel="stylesheet" href="'.$_COOKIE["style_css"].'.css" />';
     }
 

@@ -1,7 +1,7 @@
 
         <!-- Body -->
-        <div id="contenu">   
-            
+        <div id="contenu"> 
+                
             <h3><u><a href="index.php?page=Hobbies&lang=en">Anglais</a></u></h3>
             
             <h2><em>Photographie</em></h2>

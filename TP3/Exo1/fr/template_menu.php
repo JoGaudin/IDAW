@@ -9,7 +9,8 @@
         'Hobbies' => array('Hobbies'),
         'infos-technique' => array('Infos technique'),
         'contact' => array('Me Contacter'),
-        'login' => array('TP3')
+        'login' => array('TP3_login'),
+        'connected' => array('TP3_connected')
     );
 
     foreach($mymenu as $pageId => $pageParameters){
@@ -33,6 +34,15 @@
     
     echo "</ul>";
     echo "</nav>";
+
+
+    session_start();
+    if(isset($_SESSION['nom'])){
+        echo "Session name : ".$_SESSION['nom'];
+    }
+     
+            
+
 
     }
 ?>
