@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="default" charset="utf-8" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <title>tabletest</title>
+    <style>
+        body{ margin-top: 5em; }
+        .table {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Table test</h1>
+    <h1>Tableau de personnes</h1>
     <table class="table">
         <thead>
             <tr>
@@ -25,7 +32,7 @@
         <tbody id="studentsTableBody">
         </tbody>
     </table>
-    <form id="addStudentForm" action="" onsubmit="onFormSubmit();" style="margin-left: auto; margin-right: auto; width: 6em">
+    <form id="addStudentForm" action="" onsubmit="onFormSubmit();">
         <div class="form-group row">
             <label for="inputNom" class="col-sm-2 col-form-label">Nom</label>
             <div class="col-sm-3">
@@ -35,13 +42,13 @@
             <div class="col-sm-3">
                 <input type="text" class="form-control" id="inputPrenom">
             </div>
-            <label for="inputBirthday" class="col-sm-2 col-form-label">Date de naissance</label>
+            <label for="inputanniv" class="col-sm-2 col-form-label">Date de naissance</label>
             <div class="col-sm-3">
-                <input type="date" class="form-control" id="inputBirthday">
+                <input type="date" class="form-control" id="inputanniv">
             </div>
-            <label for="inputAvis" class="col-sm-2 col-form-label">Aime le cours de web</label>
+            <label for="inputAime" class="col-sm-2 col-form-label">Aime le cours de web</label>
             <div class="col-sm-3">
-                <input type="checkbox" class="form-control" id="inputAvis">
+                <input type="checkbox" class="form-control" id="inputAime">
             </div>
             <label for="inputRemarques" class="col-sm-2 col-form-label">Remarques</label>
             <div class="col-sm-3">
@@ -66,11 +73,11 @@
             for (let i = 0; i < students.length; i++) {
                 showStudents += `<tr id="#row"+"${i}"><td>${students[i]['nom']}</td>
                 <td>${students[i]['prenom']}</td>
-                <td>${students[i]['birthday']}</td>
+                <td>${students[i]['anniv']}</td>
                 <td>${students[i]['avis']}</td>
                 <td>${students[i]['remarque']}</td>
                 <td>
-                <button class="btn btn-primary" onclick="editStudent(${i})" style="margin-right:10px">Edit</button>
+                <button class="btn btn-primary" onclick="edit_Student(${i})" style="margin-right:10px">Edit</button>
                 <button class="btn btn-primary" onclick="deleteStudent(${i})">Delete</button>
                 </td></tr>`
             }
@@ -82,10 +89,10 @@
         function addStudent() {
             let nom = $("#inputNom").val();
             let prenom = $("#inputPrenom").val();
-            let birthday = $("#inputBirthday").val();
+            let anniv = $("#inputanniv").val();
             let remarques = $("#inputRemarques").val();
             let avis
-            if ($("#inputAvis").prop('checked')) {
+            if ($("#inputAime").prop('checked')) {
                 avis = 'oui';
             } else {
                 avis = 'non'
@@ -97,51 +104,59 @@
                     nom: nom,
                     prenom: prenom,
                     avis: avis,
-                    birthday: birthday,
+                    anniv: anniv,
                     remarque: remarques
                 })
             }
         }
 
         function addStudentInRow(index) {
-
+            let newStudent = [];
             let nom = $("#inputNom").val();
             let prenom = $("#inputPrenom").val();
-            let birthday = $("#inputBirthday").val();
-            let remarques = $("#inputRemarques").val();
+            let anniv = $("#inputanniv").val();
             let avis
-            if ($("#inputAvis").prop('checked')) {
+            if ($("#inputAime").prop('checked')) {
                 avis = 'oui';
             } else {
                 avis = 'non'
             };
+            let remarques = $("#inputRemarques").val();
+            
 
             if (nom != "") {
-                let newStudent = {
-                    id: student.length + 1,
+                newStudent.push({
+                    id: students.length + 1,
                     nom: nom,
                     prenom: prenom,
-                    birthday: birthday,
+                    anniv: anniv,
                     avis: avis,
                     remarque: remarques
-                }
+                }) 
             }
 
-            console.log(students.join());
-            arr.splice(index, 0, newStudent);
-            console.log(arr.join());
+
         }
 
         function onFormSubmit() {
             // prevent the form to be sent to the server
             event.preventDefault();
             if (editStudent) {
-                echo('true');
+                document.getElementById('inputNom').style.background = '#696969';
+                document.getElementById('inputPrenom').style.background = '#696969';
+                document.getElementById('inputanniv').style.background = '#696969';
+                document.getElementById('inputRemarques').style.background = '#696969';
+                console.log('true');
                 addStudentInRow(currentStudent);
+                edit_Student(currentStudent);
                 students.splice(currentStudent + 1, 1);
                 displayStudents();
             } else {
-                echo('false');
+                document.getElementById('inputNom').style.background = '#999999';
+                document.getElementById('inputPrenom').style.background = '#999999';
+                document.getElementById('inputanniv').style.background = '#999999';
+                document.getElementById('inputRemarques').style.background = '#999999';
+                console.log('false');
                 addStudent();
                 displayStudents();
             }
@@ -154,7 +169,7 @@
             displayStudents();
         }
 
-        function editStudent(index) {
+        function edit_Student(index) {
             $(':input', '#addStudentForm')
                 .val('')
                 .prop('checked', false);
