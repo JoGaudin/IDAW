@@ -42,6 +42,7 @@
 <form id="style_form" action="index.php" method="GET">
     <input name="page" type="hidden" value="login"> 
     <input name="lang" type="hidden" value="fr">
+    <input name="css" type="hidden" value="fr">
     <select name="css">
         <option value="style1">style1</option>
         <option value="style2">style2</option>

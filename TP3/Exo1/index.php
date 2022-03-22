@@ -1,4 +1,5 @@
     <?php
+       
        $langdef = 'fr';
        if(isset($_GET['lang'])){
             if($_GET['lang'] == 'fr' || $_GET['lang'] == 'en'){
@@ -8,6 +9,9 @@
         }     
         }
         
+
+
+
         require_once($langdef."/template_header.php");
         require_once($langdef."/template_menu.php");
 

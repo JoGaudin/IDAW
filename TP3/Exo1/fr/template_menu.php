@@ -10,7 +10,9 @@
         'infos-technique' => array('Infos technique'),
         'contact' => array('Me Contacter'),
         'login' => array('TP3_login'),
-        'connected' => array('TP3_connected')
+        'connected' => array('TP3_connected'),
+        'testConnexion' => array('Base de donnée')
+
     );
 
     foreach($mymenu as $pageId => $pageParameters){
