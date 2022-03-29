@@ -33,8 +33,9 @@ if(!$successfullyLogged){
 }
 else{
     session_start();
-    $_SESSION['login']=$login;
-    $_SESSION['firstname']=$name;
+    $_SESSION['LOGIN']=$login;
+    $_SESSION['PRENOM']=$name;
+
     echo "
     <!DOCTYPE html>
     <html lang='en'>
