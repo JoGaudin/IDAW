@@ -172,7 +172,7 @@
 </html>
 <script type = "text/javascript" src="js/AlimentsScript.js"></script>
 <script>
-    $.post('http://localhost/IDAW/iMM/back-end/aliments.php', function(alim) {
+    $.get('http://localhost/IDAW/iMM/back-end/aliments.php', function(alim) {
                 console.debug(alim);
                 alim = JSON.parse(alim);
                 alim.forEach(row => {
