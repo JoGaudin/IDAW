@@ -31,28 +31,29 @@ function renderMenuToHTML($currentPageId) {
         'journal' => array('Journal'),
     );
 
+    foreach($mymenu as $pageId => $pageParameters){
+        if($pageId == $currentPageId){
+            echo  '<title>'.$pageParameters[0].'</title>'; 
+        }
+    }
 
     // echo "<p> currentPageId = $currentPageId</p>";
 
     echo "<nav>";
     echo "<ul>";
 
-    // foreach($mymenu as $pageId => $pageParameters){
-    //     echo "<li><a ";
-
-    //     if($pageId == $currentPageId){
-    //         echo  'id="currentpage"'; 
-    //     }
-    //     echo 'href="index.php?page='.$pageId.'.php">'.$pageParameters[0];
-        
-    //     echo "</a></li>";
-    // }
-
     foreach($mymenu as $pageId => $pageParameters){
+        echo "<li><a ";
+
         if($pageId == $currentPageId){
-            echo  '<h1 id="titre"><a href="index.php">'.$pageParameters[0].'</a></h1>'; 
+            echo  'id="currentpage"'; 
         }
+        echo 'href="index.php?page='.$pageId.'.php">'.$pageParameters[0];
+        
+        echo "</a></li>";
     }
+
+
     
     echo "</ul>";
     echo "</nav>";
