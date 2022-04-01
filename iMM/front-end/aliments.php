@@ -173,19 +173,6 @@
 <script type = "text/javascript" src="js/AlimentsScript.js"></script>
 <script>
     $(document).ready( function () {
-        /*DataTables instantiation.*/
-        var table = $('#aliments').DataTable( {
-        scrollY:        "300px",
-        scrollX:        true,
-        scrollCollapse: true,
-        paging:         true,
-        columnDefs: [
-            { width: '20%', targets: 0 }
-        ],
-        fixedColumns: true
-        
-        } );
-    });
     $.ajax({
     type: 'GET',
     url: 'http://localhost/IDAW/iMM/back-end/aliments.php',
@@ -197,6 +184,19 @@
         data.forEach(row => {
         $("#aliments").append(`<tr><td><button type='button' onclick='display(this)' class='btn'><i class='fas fa-edit'/></button></td><td><button type='button'onclick='utilDelete(this);'class='btn'><i class='fas fa-trash' /></button></td><td>${row[0]}</td><td>${row[1]}</td></tr>`);
                    });
+
+         /*DataTables instantiation.*/
+         var table = $('#aliments').DataTable( {
+        scrollY:        "300px",
+        scrollX:        true,
+        scrollCollapse: true,
+        paging:         true,
+        columnDefs: [
+            { width: '20%', targets: 0 }
+        ],
+        fixedColumns: true
+        
+        } );
         
     })
 
@@ -208,6 +208,7 @@
         console.log("Requête done");
     })
     
+    });
     
                
 </script>
