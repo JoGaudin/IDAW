@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
     session_start();
 ?>
@@ -202,3 +203,10 @@
             
             
 </script>
+=======
+<?php 
+require_once('template_header.php');
+require_once('template_menu.php');
+
+?>
+>>>>>>> 2c6fe43d37dd4d75443202f9ab9941f8f46cd6f2

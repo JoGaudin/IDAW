@@ -1,0 +1,35 @@
+ul {
+    padding:0;
+    margin:0;
+    list-style-type:none;
+    }
+   li {
+    /* float:left; pour IE */
+    display: inline-block;
+    /* border-left:1px solid black; */
+    }
+   ul li a {
+    display:block;
+    /* float:left;    */
+    width:100px;
+    line-height:50px; /*hauteur de l'image de fond*/
+    background: black url(images/noir-1.png) repeat-x;
+    color:#DCDCDC;
+    text-decoration:none;
+    text-align:center;
+    }
+   ul li a:hover {
+    background: orange url(images/noir-2.png) repeat-x;
+    color:white;
+    }  
+
+    body{
+        text-align: center;
+        align-items: center;
+    }
+
+ #deconn {
+
+    color: blue;
+    text-decoration: none;
+ }
