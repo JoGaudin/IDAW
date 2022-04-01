@@ -21,6 +21,12 @@
         }
     }
 
+    foreach($mymenu as $pageId => $pageParameters){
+        if($pageId == $currentPageId){
+            echo  '<title>'.$pageParameters[0].'</title>'; 
+        }
+    }
+
     echo "<nav>";
     echo "<ul>";
 

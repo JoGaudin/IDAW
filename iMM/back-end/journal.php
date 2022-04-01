@@ -14,6 +14,16 @@
         $login = $_POST['login'];
     }
     //echo $login;
+    $name = mysqli_real_escape_string($conn, $_POST['nomrepas']);
+    $date = mysqli_real_escape_string($conn, $_POST['daterepas']);
+    echo $_POST['nomrepas'];
+    $res = "INSERT INTO meal (login, date, meal_label) VALUES ('$login', '$name', '$date')";
+    if ($conn->query($res) === TRUE) {
+        echo "New record created successfully";
+    }else {
+        echo "Error: " . $res . "<br>" . $conn->error;
+    }
+    
     $sql = mysqli_query($conn,"SELECT meal.MEAL_LABEL, meal.DATE, meal.ID_MEAL FROM meal WHERE meal.LOGIN = '${login}'");
     $result = mysqli_fetch_all($sql);
     $tableauAliments = array();
@@ -31,14 +41,7 @@
     $json = json_encode($tableauRepas);
     //echo $json;
 
-    $name = mysqli_real_escape_string($conn, $_POST['nomrepas']);
-    $date = mysqli_real_escape_string($conn, $_POST['daterepas']);   
-    $res = "INSERT INTO meal (login, date, meal_label) VALUES ('$login', '$name', '$date')";
-    if ($conn->query($res) === TRUE) {
-        echo "New record created successfully";
-    }else {
-        echo "Error: " . $res . "<br>" . $conn->error;
-    }
+   
 
 
 ?>
