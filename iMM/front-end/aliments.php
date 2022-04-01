@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
     session_start();
 ?>
@@ -173,11 +172,10 @@
 </html>
 <script type = "text/javascript" src="js/AlimentsScript.js"></script>
 <script>
-    $.get('http://localhost/IDAW/iMM/back-end/aliments.php', function(alim) {
+    $.post('http://localhost/IDAW/iMM/back-end/aliments.php', function(alim) {
                 console.debug(alim);
                 alim = JSON.parse(alim);
                 alim.forEach(row => {
-                    //$("#aliments").append(`tr><td>${row[0]}</td></tr>`);
                     $("#aliments").append(`<tr><td><button type='button' onclick='display(this)' class='btn'><i class='fas fa-edit'/></button></td><td><button type='button'onclick='utilDelete(this);'class='btn'><i class='fas fa-trash' /></button></td><td>${row[0]}</td><td>${row[1]}</td></tr>`);
                 });
             })
@@ -185,28 +183,21 @@
             
 
             .done(function(alim) {
-                console.log("La requête a été un succès");
+                console.log("Success resquest");
             })
 
             .fail(function() {
-                console.log("La requête s'est terminée en échec")
+                console.log("Fail resquest")
             })
 
             .always(function() {
-                console.log("Requête effectuée");
+                console.log("Requête done");
             })
 
             $(document).ready( function () {
-            $('#aliments').DataTable();
+                $('#aliments').DataTable();
             } );
 
             
             
 </script>
-=======
-<?php 
-require_once('template_header.php');
-require_once('template_menu.php');
-
-?>
->>>>>>> 2c6fe43d37dd4d75443202f9ab9941f8f46cd6f2
