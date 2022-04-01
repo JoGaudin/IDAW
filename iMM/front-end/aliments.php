@@ -37,7 +37,7 @@
                 </table>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-sm-6">
                 <div class="panel panel-primary">
                     <h2 >Ajouter un Aliment</h2>
@@ -166,38 +166,48 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </body>
 </html>
 <script type = "text/javascript" src="js/AlimentsScript.js"></script>
 <script>
-    $.get('http://localhost/IDAW/iMM/back-end/aliments.php', function(alim) {
-                console.debug(alim);
-                alim = JSON.parse(alim);
-                alim.forEach(row => {
-                    $("#aliments").append(`<tr><td><button type='button' onclick='display(this)' class='btn'><i class='fas fa-edit'/></button></td><td><button type='button'onclick='utilDelete(this);'class='btn'><i class='fas fa-trash' /></button></td><td>${row[0]}</td><td>${row[1]}</td></tr>`);
-                });
-            })
+    $(document).ready( function () {
+        /*DataTables instantiation.*/
+        var table = $('#aliments').DataTable( {
+        scrollY:        "300px",
+        scrollX:        true,
+        scrollCollapse: true,
+        paging:         true,
+        columnDefs: [
+            { width: '20%', targets: 0 }
+        ],
+        fixedColumns: true
+        
+        } );
+    });
+    $.ajax({
+    type: 'GET',
+    url: 'http://localhost/IDAW/iMM/back-end/aliments.php',
+    Type: 'JSON',
+    }).done(function(data) {
+        console.log("Success resquest");
+        data = JSON.parse(data);
+                
+        data.forEach(row => {
+        $("#aliments").append(`<tr><td><button type='button' onclick='display(this)' class='btn'><i class='fas fa-edit'/></button></td><td><button type='button'onclick='utilDelete(this);'class='btn'><i class='fas fa-trash' /></button></td><td>${row[0]}</td><td>${row[1]}</td></tr>`);
+                   });
+        
+    })
 
-            
+    .fail(function() {
+        console.log("Fail resquest")
+    })
 
-            .done(function(alim) {
-                console.log("Success resquest");
-            })
-
-            .fail(function() {
-                console.log("Fail resquest")
-            })
-
-            .always(function() {
-                console.log("Requête done");
-            })
-
-            $(document).ready( function () {
-                $('#aliments').DataTable();
-            } );
-
-            
-            
+    .always(function() {
+        console.log("Requête done");
+    })
+    
+    
+               
 </script>
