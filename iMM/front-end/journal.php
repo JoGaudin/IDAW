@@ -11,7 +11,7 @@
     <!-- <link rel='stylesheet' href='css/crud2.css' type='text/css' media='screen' title='default' charset='utf-8' /> -->
     <script src="js/jquery-1.11.0.min.js"></script>
     <!-- <script src="js/bootstrap.min.js"></script> -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.24/datatables.min.css"/> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.24/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.24/datatables.min.js"></script>
     <script type = "text/javascript" src="js/scriptJournal.js"></script> 
     <script src="js/jquery-1.11.0.min.js"></script>
@@ -90,11 +90,11 @@
                         <form id="formutil" onsubmit="event.preventDefault();utilBuildTableRow();" autocomplete="on">
                             <div class="form-group">
                                 <label for="label"> Repas </label>
-                                <input type="text" class="form-control" id="label" placeholder="Nom du repas" name="nomrepas" required/>
+                                <input type="text" class="form-control" id="label" placeholder="Nom du repas" name="label" required/>
                             </div>
                             <div class="form-group">
                                 <label for="date"> Et c'était quand ce bon repas ? </label>
-                                <input type="datetime" class="form-control"  id="date" name="daterepas" required/>
+                                <input type="datetime" class="form-control"  id="date" name="date" required/>
                             </div>
                             <div class="col-xs-12">
                                 <input type="submit" id="updateButton" class="btn btn-primary"  onclick="update();" value="Ajouter">
