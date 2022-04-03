@@ -1,45 +1,25 @@
 <?php
-      header('Content-Type: application/json');
-      $config = include('config.php');
-      $conn= mysqli_connect($config['database'], $config['username'], $config['password'], $config['dbname']);
-    if($conn == false){
-        die("ERROR: Could not connect. " . mysqli_connect_error());
-    }
+    try {
+        $conn = new PDO("mysql:host=localhost;dbname=favreau_gaudin;charset=utf8", "root", "", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+        
+        if(isset($_POST['login'] )){
+            $login = $_POST['login'];
+        }
 
-    if (!mysqli_set_charset($conn, "utf8")) {
-        printf("Erreur lors du chargement du jeu de caractères utf8 : %s\n", mysqli_error($link));
-        exit();
-    }
-    if(isset($_POST['login'] )){
-        $login = $_POST['login'];
-    }
-    //echo $login;
-    $name = mysqli_real_escape_string($conn, $_POST['nomrepas']);
-    $date = mysqli_real_escape_string($conn, $_POST['daterepas']);
-    echo $_POST['nomrepas'];
-    $res = "INSERT INTO meal (login, date, meal_label) VALUES ('$login', '$name', '$date')";
-    if ($conn->query($res) === TRUE) {
-        echo "New record created successfully";
-    }else {
-        echo "Error: " . $res . "<br>" . $conn->error;
-    }
+        $sql = "SELECT LIBELLE_ALIMENT, DATE FROM consomme INNER JOIN aliment ON consomme.ID_ALIMENT = aliment.ID_ALIMENT INNER JOIN profil ON consomme.ID_PROFILE = profil.ID_PROFILE WHERE LOGIN = 'johan.gaudin@etu.imt-lille-douai.fr' ORDER BY consomme.DATE ASC;";
+        
     
-    $sql = mysqli_query($conn,"SELECT meal.MEAL_LABEL, meal.DATE, meal.ID_MEAL FROM meal WHERE meal.LOGIN = '${login}'");
-    $result = mysqli_fetch_all($sql);
-    $tableauAliments = array();
-
-
-    for($i=2;$i<sizeof($result);$i++)
-    {
-        $label=$result[$i][0];
-        $date=$result[$i][1];
-        $id=$result[$i][2];
-        $row = array();
-        array_push($row,$label);array_push($row,$date);array_push($row,$id);
-        array_push($tableauRepas,$row);
+        $result = $conn->query($sql);
+        $rows = $result->fetchAll();
+    
+        if (!$rows)
+            $rows['status'] = 'Fail';
+    
+        echo json_encode($rows);
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
     }
-    $json = json_encode($tableauRepas);
-    //echo $json;
+
 
    
 

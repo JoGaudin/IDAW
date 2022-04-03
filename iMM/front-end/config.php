@@ -2,7 +2,7 @@
 return array(
     'database' => 'localhost',
     'username' => 'root',
-    'password' => 'root',
+    'password' => '',
     'dbname' => 'favreau_gaudin'
 );
 ?>

@@ -17,6 +17,11 @@
     <div class="titre">
         <h4>Bienvenue !</h4>
     </div>
+
+    <?php
+        require_once('template_menu.php');
+    ?>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
@@ -187,11 +192,11 @@
 
          /*DataTables instantiation.*/
          var table = $('#aliments').DataTable( {
-        scrollY:        "300px",
-        scrollX:        true,
-        scrollCollapse: true,
-        paging:         true,
-        columnDefs: [
+            scrollY:        "300px",
+            scrollX:        true,
+            scrollCollapse: true,
+            paging:         true,
+            columnDefs: [
             { width: '20%', targets: 0 }
         ],
         fixedColumns: true
