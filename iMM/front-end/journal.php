@@ -51,7 +51,7 @@
             </div>
         </div>
         
-<!-- Nous n'arrivons pas à récupérer un retour correct sur cette requête ci-dessous, donc obligés de communiquer avce la base dans le front. -->
+
 <script>
     $(document).ready( function () {
     $.ajax({
