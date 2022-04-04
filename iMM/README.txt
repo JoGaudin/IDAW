@@ -25,4 +25,6 @@ Vous arrivez sur la page connecter où il faut sélectionner un onglet parmis le
     
 Un bouton deconnexion permet de revenir à l'accueil
 
-On aurait bien aimé changer la couleur du background mais le style de la datatable ne rendait pas bien avec les différentes couleurs de background que l'on a choisit
+On aurait bien aimé changer la couleur du background mais le style de la datatable ne rendait pas bien avec les différentes couleurs de background que l'on a choisit.
+
+La base de donnée se trouve dans le fichier back-end/doc
