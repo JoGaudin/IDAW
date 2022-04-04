@@ -1,3 +1,15 @@
+body
+{
+    background-color: white;     
+    color: black;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+    font-family:  "Arial", Arial, Verdana, sans-serif, Impact;
+}
+
+
+
 ul {
     padding:0;
     margin:0;
@@ -13,13 +25,13 @@ ul {
     /* float:left;    */
     width:100px;
     line-height:50px; /*hauteur de l'image de fond*/
-    background: black url(images/noir-1.png) repeat-x;
+    background: black;
     color:#DCDCDC;
     text-decoration:none;
     text-align:center;
     }
    ul li a:hover {
-    background: orange url(images/noir-2.png) repeat-x;
+    background: orange;
     color:white;
     }  
 
@@ -32,4 +44,18 @@ ul {
 
     color: blue;
     text-decoration: none;
+    text-decoration: underline;
  }
+
+ #deconn:hover
+ {  
+    color: black;
+    text-decoration: none;
+ }
+
+.container
+{
+
+    margin-left: 37%;
+}
+

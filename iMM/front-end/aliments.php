@@ -8,17 +8,10 @@
 <head>
     
     <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"></script>
     
         
 </head>
 <body>
-    <div class="titre">
-        <h4>Bienvenue !</h4>
-    </div>
-
     <?php
         require_once('template_menu.php');
     ?>
@@ -34,7 +27,6 @@
                 <table id="aliments" class="display table table-bordered nowrap" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Modifier</th>
                             <th>Supprimer</th>
                             <th>Aliment</th>
                             <th>Type</th>
@@ -61,7 +53,7 @@
         data = JSON.parse(data);
                 
         data.forEach(row => {
-        $("#aliments").append(`<tr><td><button type='button' onclick='display(this)' class='btn'><i class='fas fa-edit'/></button></td><td><button type='button'onclick='utilDelete(this);'class='btn'><i class='fas fa-trash' /></button></td><td>${row[0]}</td><td>${row[1]}</td></tr>`);
+        $("#aliments").append(`<tr><td><button type='button'onclick='utilDelete(this);'class='btn'><i class='fas fa-trash' /></button></td><td>${row[0]}</td><td>${row[1]}</td></tr>`);
                    });
 
          /*DataTables instantiation.*/
@@ -71,7 +63,8 @@
             scrollCollapse: true,
             paging:         true,
             columnDefs: [
-            { width: '20%', targets: 0 }
+            { width: '20%', targets: 0 
+            }
         ],
         fixedColumns: true
         

@@ -1,6 +1,6 @@
 <?php
     try {
-        $conn = new PDO("mysql:host=localhost;dbname=favreau_gaudin;charset=utf8", "root", "root", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+        $conn = new PDO("mysql:host=localhost;dbname=favreau_gaudin;charset=utf8", "root", "", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
         // require_once(db_conn.php);
         $login = $_POST['login'];
         

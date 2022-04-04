@@ -3,24 +3,8 @@
     require_once('template_header.php');
 ?>
 
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"></script>
-    <!-- <script type = "text/javascript" src="js/scriptJournal.js"></script>  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal</title>
-</head>
-<body>
-    <div class="col-sm-6">
-    <?php 
-        $user = $_SESSION['PRENOM'];
-        $login = $_SESSION['LOGIN'];
-    ?>
-    <script type =  "text/javascript"> login = '<?php echo "$login" ?>';</script>
-        <h4>Bienvenue <?php echo $user?>!</h4>
+
+
 
     <?php
         require_once('template_menu.php');
